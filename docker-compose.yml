@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  myproject.web:
+    container_name: myproject.apache
+    build: ./myproject.web
+    hostname: web
+    domainname: localdomain
+    volumes:
+      - ./document_root:/var/www/myproject/
+      - ./program:/root/program
+      - ../service:/var/www/myproject/service
+    ports:
+      - 80:80
+      - 443:443
+      - 25:25
+    tty: true
+    command: /bin/chown www-data:www-data /var/www/myproject/service/application/logs/
+    command: /usr/sbin/apache2ctl -D FOREGROUND
+    networks:
+      static-network:
+        ipv4_address: 172.20.128.2
+
+networks:
+  static-network:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+          #docker-compose v3+ do not use ip_range
+          ip_range: 172.28.5.0/24
