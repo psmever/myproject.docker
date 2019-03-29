@@ -39,6 +39,9 @@ COPY ./apache2.conf ${APACHE_CONF_DIR}/apache2.conf
 RUN mv ${APACHE_CONF_DIR}/sites-available/000-default.conf ${APACHE_CONF_DIR}/sites-available/bak_000-default.conf
 COPY ./000-default.conf ${APACHE_CONF_DIR}/sites-available/000-default.conf
 
+RUN mv ${APACHE_CONF_DIR}/ports.conf ${APACHE_CONF_DIR}/bak_ports.conf
+COPY ./ports.conf ${APACHE_CONF_DIR}/ports.conf
+
 RUN apt-get install -y \
     php7.2 \
     php7.2-common \
