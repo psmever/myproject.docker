@@ -9,6 +9,9 @@ echo "$line $line2.localdomain" >> /etc/hosts
 
 sed -i 's/\;date\.timezone \=/date\.timezone \= Asia\/Seoul/g' /etc/php/7.2/apache2/php.ini
 sed -i 's/\;date\.timezone \=/date\.timezone \= Asia\/Seoul/g' /etc/php/7.2/cli/php.ini
+# sed -i 's/\;extension\=gd2/extension\=gd/g' /etc/php/7.2/apache2/php.ini
+#sed -i 's/\;extension\=mbstring/extension\=mbstring/g' /etc/php/7.2/apache2/php.ini
+#sed -i 's/\;extension\=mysqli/extension\=mysqli/g' /etc/php/7.2/apache2/php.ini
 
 echo 'xdebug.enable=1' >> /etc/php/7.2/mods-available/xdebug.ini
 echo 'xdebug.idekey="VSCODE"' >> /etc/php/7.2/mods-available/xdebug.ini

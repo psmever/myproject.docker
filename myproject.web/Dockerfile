@@ -53,6 +53,7 @@ RUN apt-get install -y \
     php7.2-zip \
     php7.2-curl \
     php7.2-xml \
+    php7.2-gd \
     php7.2-mysql
 
 RUN a2enmod rewrite headers
