@@ -6,6 +6,7 @@
 /.idea
 .pnp.js
 document_root/image/*
+document_root/upload/*
 
 # testing
 /coverage
