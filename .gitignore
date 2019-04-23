@@ -5,7 +5,7 @@
 /.pnp
 /.idea
 .pnp.js
-/document_root/image/
+document_root/image/
 
 # testing
 /coverage
