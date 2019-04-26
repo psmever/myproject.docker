@@ -5,8 +5,10 @@
 /.pnp
 /.idea
 .pnp.js
-document_root/image/*
-document_root/upload/*
+document_root/image/post/*
+document_root/image/profile/*
+document_root/upload/post/*
+document_root/upload/profile/*
 
 # testing
 /coverage
