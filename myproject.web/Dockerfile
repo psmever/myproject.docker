@@ -57,7 +57,7 @@ RUN apt-get install -y \
     php-mysql
 
 RUN a2enmod rewrite headers
-RUN a2enmod php
+RUN a2enmod php7.2
 
 RUN mkdir -p /var/www/myproject
 RUN chown -R www-data:www-data /var/www/myproject
