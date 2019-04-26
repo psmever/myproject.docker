@@ -43,21 +43,21 @@ RUN mv ${APACHE_CONF_DIR}/ports.conf ${APACHE_CONF_DIR}/bak_ports.conf
 COPY ./ports.conf ${APACHE_CONF_DIR}/ports.conf
 
 RUN apt-get install -y \
-    php7.2 \
-    php7.2-common \
-    php7.2-cli \
-    libphp7.2-embed \
+    php \
+    php-common \
+    php-cli \
+    libphp-embed \
     php-xdebug \
-    php7.2-bz2 \
-    php7.2-mbstring \
-    php7.2-zip \
-    php7.2-curl \
-    php7.2-xml \
-    php7.2-gd \
-    php7.2-mysql
+    php-bz2 \
+    php-mbstring \
+    php-zip \
+    php-curl \
+    php-xml \
+    php-gd \
+    php-mysql
 
 RUN a2enmod rewrite headers
-RUN a2enmod php7.2
+RUN a2enmod php
 
 RUN mkdir -p /var/www/myproject
 RUN chown -R www-data:www-data /var/www/myproject
@@ -70,6 +70,7 @@ RUN apt-get install -y mariadb-client
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 EXPOSE 80
+EXPOSE 4040
 EXPOSE 9000
 
 ENV APACHE_RUN_USER www-data
