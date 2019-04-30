@@ -9,6 +9,7 @@
 document_root/image/post/*
 document_root/image/profile/*
 document_root/upload/image/*
+document_root/test/*
 
 # testing
 /coverage
